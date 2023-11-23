@@ -137,6 +137,7 @@
   display: flex;
   margin: auto;
   box-sizing: border-box;
+  flex-direction: column;
 
   justify-content: center;
   align-items: center;
@@ -155,4 +156,42 @@
   height: 0.1%;
   border: solid white 2px;
   background-color: white;
+}
+
+.show-title {
+  height: 10%;
+  width: 100%;
+
+  position: relative;
+  display: flex;
+  margin: auto;
+  box-sizing: border-box;
+
+  justify-content: center;
+  align-items: center;
+
+  font-size: 50%;
+}
+
+.slideshow {
+  position: relative;
+  height: 90%;
+  width: 95%;
+  display: flex;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+.slideshow img {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  margin: auto;
+  top: 6%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slideshow img.active {
+  opacity: 1;
 }
