@@ -1,0 +1,106 @@
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />  
+  <link rel="stylesheet" href="../css/graph.css">
+  <style type="text/css">
+      html{
+          height: 100%;
+      }
+      body{
+        background-image: url(https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202311222222109.png);
+          background-color: black;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-position: center;
+          background-size:cover;
+      }
+      a {text-decoration: none}
+  </style>
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=aqzLfIIEr6KaboQ31v7wg8G1VzGeXx1M">
+  </script>
+</head>
+
+<body>
+  <div class="page">
+    <div class="welcome">
+    <font face="微软雅黑">
+      <strong>
+        面向北航lrgg的时空大数据匹配平台
+      </strong>
+    </font>
+    </div>
+
+    <div class="select">
+      <div class="select-button" id="select-left">
+        CO组织调控
+      </div>
+
+      <div class="select-button">
+        OO组织调控
+      </div>
+
+      <div class="select-button">
+        OS组织调控
+      </div>
+
+      <div class="select-button" id="select-right">
+        SE组织调控
+      </div>
+
+    </div>
+
+    <div class="graph">
+      <div class="graph-show" id="graph-left">
+        <div class="show-box" id="left-1">
+          1
+        </div>
+        <div class="line"></div>
+        <div class="show-box" id="left-2">
+          2
+        </div>
+      </div>
+
+      <div class="graph-show" id="graph-middle">
+        <script type="text/javascript"> 
+          var map = new BMap.Map("graph-middle");
+          // 创建地图实例  
+          var point = new BMap.Point(116.347298, 39.981808);
+          // 创建点坐标  
+          map.centerAndZoom(point, 18);
+          map.enableScrollWheelZoom();
+          map.enableKeyboard();
+          // 初始化地图，设置中心点坐标和地图级别  
+          map.setMapStyleV2({styleId: '448f5539c94424314c2c6af7389fa0b2'});
+          </script> 
+      </div>
+
+      <div class="graph-show" id="graph-right">
+        <div class="show-box" id="right-1">
+          3
+        </div>
+        <div class="line"></div>
+        <div class="show-box" id="right-2">
+          4
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+</body>
+</html>
+
+<script type="text/javascript">  
+  function initialize() {  
+    var mp = new BMap.Map('map');
+    map.enableScrollWheelZoom();
+    mp.centerAndZoom(new BMap.Point(121.491, 31.233), 11);
+  }  
+     
+  function loadScript() {  
+    var script = document.createElement("script");  
+    script.src = "https://api.map.baidu.com/api?v=2.0&ak=您的密钥&callback=initialize";
+    document.body.appendChild(script);  
+  }
+</script>
