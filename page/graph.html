@@ -55,7 +55,9 @@
         <div class="show-box" id="left-1">
           1
         </div>
+
         <div class="line"></div>
+
         <div class="show-box" id="left-2">
           2
         </div>
@@ -87,7 +89,7 @@
     </div>
   </div>
   
-
+  <script src="../js/style.js"></script>
 </body>
 </html>
 
@@ -96,11 +98,11 @@
     var mp = new BMap.Map('map');
     map.enableScrollWheelZoom();
     mp.centerAndZoom(new BMap.Point(121.491, 31.233), 11);
-  }  
-     
+  }
+
   function loadScript() {  
     var script = document.createElement("script");  
-    script.src = "https://api.map.baidu.com/api?v=2.0&ak=您的密钥&callback=initialize";
+    script.src = "https://api.map.baidu.com/api?v=2.0&ak=aqzLfIIEr6KaboQ31v7wg8G1VzGeXx1M&callback=initialize";
     document.body.appendChild(script);  
   }
 </script>
