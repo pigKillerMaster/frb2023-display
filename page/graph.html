@@ -9,7 +9,7 @@
       }
       body{
         background-image: url(https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202311222222109.png);
-        background-color: black;
+        background-color: white;
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-position: center;
@@ -17,8 +17,8 @@
       }
       a {text-decoration: none}
   </style>
-  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=aqzLfIIEr6KaboQ31v7wg8G1VzGeXx1M">
-  </script>
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=aqzLfIIEr6KaboQ31v7wg8G1VzGeXx1M"></script>
+  <script src="../js/echarts.js"></script>
 </head>
 
 <body>
@@ -26,76 +26,72 @@
     <div class="welcome">
     <font face="微软雅黑">
       <strong>
-        面向北航lrgg的时空大数据匹配平台
+        时空大数据匹配平台
       </strong>
     </font>
     </div>
 
     <div class="select">
       <div class="select-button" id="select-left">
-        CO组织调控
+        组织调控1
       </div>
 
       <div class="select-button">
-        OO组织调控
+        组织调控2
       </div>
 
       <div class="select-button">
-        OS组织调控
+        组织调控3
       </div>
 
       <div class="select-button" id="select-right">
-        SE组织调控
+        组织调控4
       </div>
 
     </div>
 
     <div class="graph">
       <div class="graph-show" id="graph-left">
-        <div class="show-box" id="left-1">
-          <div class="show-title">
-            图片展示
-          </div>
-          <div class="slideshow">
-            <img src="https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202311221924448.png" alt="image1">
-            <img src="https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202311221744858.png" alt="image2">
-          </div>
-        </div>
-
-        <div class="line"></div>
-
-        <div class="show-box" id="left-2">
-          2
-        </div>
+        <div id="map1" style="width: 100%;height: 100%;"></div>
+        <script src="https://fastly.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+        <script src="https://api.map.baidu.com/api?v=3.0&ak=aqzLfIIEr6KaboQ31v7wg8G1VzGeXx1M&callback=initialize"></script>
+        <script src="https://fastly.jsdelivr.net/npm/echarts@5.4.3/dist/extension/bmap.min.js"></script>
+        <script src="../js/map1.js"></script>
       </div>
 
       <div class="graph-show" id="graph-middle">
-        <script type="text/javascript"> 
-          var map = new BMap.Map("graph-middle");
-          // 创建地图实例  
-          var point = new BMap.Point(116.347298, 39.981808);
-          // 创建点坐标  
-          map.centerAndZoom(point, 18);
-          map.enableScrollWheelZoom();
-          map.enableKeyboard();
-          // 初始化地图，设置中心点坐标和地图级别  
-          map.setMapStyleV2({styleId: '448f5539c94424314c2c6af7389fa0b2'});
-          </script> 
+        <div id="map2" style="width: 100%;height: 100%;"></div>
+        <script src="https://fastly.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+        <script src="https://api.map.baidu.com/api?v=3.0&ak=aqzLfIIEr6KaboQ31v7wg8G1VzGeXx1M&callback=initialize"></script>
+        <script src="https://fastly.jsdelivr.net/npm/echarts@5.4.3/dist/extension/bmap.min.js"></script>
+        <script src="../js/map2.js"></script>
       </div>
 
       <div class="graph-show" id="graph-right">
         <div class="show-box" id="right-1">
-          3
+          <div id="rate-show" style="width: 100%;height: 100%;"></div>
+          <script src="https://fastly.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+          <script src="../js/show-box1.js"></script>
         </div>
+
         <div class="line"></div>
+
         <div class="show-box" id="right-2">
-          4
+          <div id="order-show" style="width: 100%;height: 100%;"></div>
+          <script src="https://fastly.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+          <script src="../js/show-box2.js"></script>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="show-box" id="right-3">
+          <div id="chart-container" style="width: 100%;height: 100%;"></div>
+          <script src="https://fastly.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+          <script src="../js/show-box3.js"></script>
         </div>
       </div>
     </div>
   </div>
-  
-  <script src="../js/style.js"></script>
 </body>
 </html>
 
