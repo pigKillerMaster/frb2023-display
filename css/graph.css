@@ -66,6 +66,8 @@
   color: white;
   font-family: "微软雅黑";
   font-size: 27px;
+
+  border: solid white 2px;
 }
 
 #select-left {
@@ -110,17 +112,30 @@
 
   border: solid 2px white;
   border-radius: 30px;
+
+  overflow: hidden;
 }
 
 #graph-left {
   height: 100%;
   width: 40%;
   flex-direction: column;
+
+  background-image: url(https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202312071657908.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  filter: brightness(70%);
 }
 
 #graph-middle {
   height: 100%;
   width: 40%;
+  flex-direction: column;
+
+  background-image: url(https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202312071657908.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  filter: brightness(70%);
 }
 
 #graph-right {

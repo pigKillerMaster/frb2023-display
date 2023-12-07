@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>轨迹移动示意</title>
+</head>
+
+<body>
+  <div class="dot" id="p1"></div>
+  <div class="dot" id="p2"></div>
+  <div class="dot" id="p3"></div>
+  <div class="dot" id="p4"></div>
+  <div class="dot" id="p5"></div>
+  <div class="dot" id="p6"></div>
+  <div class="dot" id="p7"></div>
+  <div class="dot" id="p8"></div>
+  <div class="dot" id="p9"></div>
+  <div class="dot" id="p10"></div>
+  <div class="dot" id="p11"></div>
+  <div class="dot" id="p12"></div>
+  <div class="dot" id="p13"></div>
+  <div class="dot" id="p14"></div>
+  <div class="dot" id="p15"></div>
+  
+  <canvas id="canvas"></canvas>
+
+<script>
+  var timerStartTime = Date.now(); // 记录定时器开始的时间戳
+
+  // 获取移动的方块和Canvas元素
+  var p1 = document.getElementById('p1');
+  var p2 = document.getElementById('p2');
+  var canvas = document.getElementById('canvas');
+  var context = canvas.getContext('2d');
+
+  // 设置Canvas大小
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  // 设置初始坐标和透明度
+  var t1 = 2000;
+  var x1,y1;
+  var opacity = 1; // 初始透明度为1
+
+  // 定义轨迹路径（这里简单使用一个椭圆路径）
+  var centerX = 350; // 椭圆中心点的 x 坐标
+  var centerY = 250; // 椭圆中心点的 y 坐标
+  var radiusX = 300; // 椭圆 x 轴半径
+  var radiusY = 100;  // 椭圆 y 轴半径
+  var angle = 0;
+
+  // 设置定时器，每隔一定时间更新方块的位置
+  var timer = setInterval(function() {
+    var timeDuration=Date.now()-timerStartTime;
+    
+    // 计算新的坐标
+    x1 = centerX + radiusX * Math.cos(angle);
+    y1 = centerY + radiusY * Math.sin(angle);
+
+    // 更新方块的位置
+    p1.style.left = x1 + 'px';
+    p1.style.top = y1 + 'px';
+    p1.style.opacity = opacity; // 设置方块的透明度
+
+    // 绘制轨迹
+    //context.clearRect(0, 0, canvas.width, canvas.height); // 清空画布
+    context.beginPath();
+    context.arc(x1, y1, 2, 0, 2 * Math.PI);
+    context.fillStyle = 'rgba(240, 230, 140, ' + opacity + ')'; // 使用rgba表示颜色，其中a表示透明度
+    context.fill();
+    if(timeDuration>t1) {
+    // 逐渐降低透明度
+    opacity -= 0.0008;
+
+    // 增加角度，控制方块的运动轨迹
+    angle += 0.005;
+
+    // 可根据需要设置停止条件，这里简单设置一个角度的最大值
+    // if (angle > 2 * Math.PI) {
+    //   clearInterval(timer);
+    // }
+    }
+  }, 5); // 更新间隔为50毫秒
+</script>
+
+</body>
+</html>

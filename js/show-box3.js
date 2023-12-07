@@ -1,4 +1,4 @@
-var dom = document.getElementById('chart-container');
+var dom = document.getElementById('full-show');
 var myChart = echarts.init(dom, null, {
   renderer: 'canvas',
   useDirtyRect: false
@@ -11,7 +11,12 @@ const data = [];
 for (let i = 0; i < 5; ++i) {
   data.push(Math.round(Math.random() * 200));
 }
+
 option = {
+  title: {
+    text: '饱和率变化',
+    left: 'center'
+  },
   xAxis: {
     max: 'dataMax'
   },
@@ -44,6 +49,7 @@ option = {
   animationEasing: 'linear',
   animationEasingUpdate: 'linear'
 };
+
 function run() {
   for (var i = 0; i < data.length; ++i) {
     if (Math.random() > 0.9) {
@@ -61,9 +67,11 @@ function run() {
     ]
   });
 }
+
 setTimeout(function () {
   run();
 }, 0);
+
 setInterval(function () {
   run();
 }, 3000);
